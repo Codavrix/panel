@@ -75,39 +75,21 @@ body {
     font-size: 40px; font-weight: 800;
 }
 
-h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; display: flex; align-items: center; justify-content: center; gap: 8px;}
-h1 span { font-size: 22px; }
+/* Заголовок без цветка */
+h1 { 
+    font-size: 28px; 
+    font-weight: 800; 
+    letter-spacing: -0.5px; 
+    margin-bottom: 8px;
+}
 
-/* Новое описание */
+/* Обновленное описание */
 .description {
     color: var(--text-muted);
     font-size: 14px;
     line-height: 1.5;
-    margin: 12px auto 16px;
-    max-width: 90%;
-}
-
-/* Плашки преимуществ */
-.features {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
-
-.feature-badge {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: var(--text-muted);
-    font-size: 11px;
-    font-weight: 600;
-    padding: 6px 12px;
-    border-radius: 20px;
-    letter-spacing: 0.3px;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
+    margin: 0 auto 20px;
+    max-width: 95%;
 }
 
 .subtitle {
@@ -151,7 +133,6 @@ h1 span { font-size: 22px; }
 }
 
 .app-card:hover { background: rgba(35, 20, 55, 0.85); border-color: rgba(255,255,255,0.15); }
-/* Эффект вдавливания при клике */
 .app-card:active { transform: scale(0.97); background: rgba(45, 25, 65, 0.9); }
 
 .app-icon {
@@ -239,7 +220,7 @@ h1 span { font-size: 22px; }
 .content-box h2 { font-size: 20px; margin-bottom: 8px; }
 .content-box .desc { color: var(--text-muted); font-size: 14px; margin-bottom: 24px; line-height: 1.45; }
 
-/* ИСПРАВЛЕННАЯ КНОПКА НАЗАД (Жесткая высота) */
+/* Кнопка НАЗАД */
 .back-btn {
     background: rgba(255,255,255,0.05);
     border: 1px solid var(--border);
@@ -249,12 +230,12 @@ h1 span { font-size: 22px; }
     font-weight: 600;
     cursor: pointer; 
     margin-bottom: 16px;
-    padding: 0 16px 0 12px; /* Убрал вертикальные отступы, задал фикс высоту */
-    height: 36px; /* Фиксированная высота */
+    padding: 0 16px 0 12px;
+    height: 36px;
     font-family: inherit;
     transition: all 0.2s ease; 
     display: inline-flex;
-    align-items: center; /* Центрирование по вертикали */
+    align-items: center; 
     justify-content: center; 
     gap: 6px; 
     width: fit-content;
@@ -264,8 +245,8 @@ h1 span { font-size: 22px; }
     display: flex;
     align-items: center;
     height: 100%;
-    line-height: 1; /* Убираем влияние шрифта */
-    margin-top: 1px; /* Легкий оптический сдвиг, если нужно */
+    line-height: 1;
+    margin-top: 1px;
 }
 
 .back-btn svg {
@@ -332,4 +313,4 @@ footer {
     h1 { font-size: 24px; }
     .content-box { padding: 20px 12px; }
     .description { font-size: 13px; }
-}
+    }
