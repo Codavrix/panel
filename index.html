@@ -15,14 +15,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Множественные фоновые эффекты -->
-    <div class="bg-glow glow-top"></div>
-    <div class="bg-glow glow-side"></div>
-    <div class="bg-glow glow-bottom"></div>
+    <!-- Фоновые эффекты -->
+    <div class="bg-glow glow-green"></div>
+    <div class="bg-glow glow-lime"></div>
 
     <main class="container">
         <header class="hero">
             <div class="logo-wrapper">
+                <!-- Убедись, что новый логотип сохранен как logo.png -->
                 <img src="logo.png" alt="Omnivex Logo" class="logo" onerror="this.style.display='none'; document.querySelector('.logo-fallback').style.display='flex';">
                 <div class="logo-fallback" style="display:none;">O</div>
             </div>
@@ -72,8 +72,7 @@
             <div class="content-box">
                 <h2 id="step-2-title">Скачайте приложение</h2>
                 <p class="desc">Для начала работы вам потребуется установить клиент.</p>
-                <!-- Эта кнопка теперь с классом btn-download -->
-                <a href="#" id="download-link" target="_blank" rel="noopener" class="btn btn-download">Скачать в Google Play</a>
+                <a href="#" id="download-link" target="_blank" rel="noopener" class="btn btn-primary">Скачать в Google Play</a>
                 <button onclick="goToStep(3)" class="btn btn-secondary mt-20">Далее</button>
             </div>
         </section>
