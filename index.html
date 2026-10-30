@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VPN Подписка — Управление</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+  body { background: #0d1117; color: #e6edf3; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 16px; }
+
+  .logo { font-size: 28px; font-weight: 800; letter-spacing: 1px; margin-bottom: 8px; }
+  .logo span { color: #2f81f7; }
+  .subtitle { color: #8b949e; margin-bottom: 32px; }
+
+  .card {
+    background: #161b22; border: 1px solid #30363d; border-radius: 16px;
+    padding: 24px; width: 100%; max-width: 480px; margin-bottom: 20px;
+  }
+  .card h2 { font-size: 16px; color: #8b949e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+
+  .status-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #21262d; }
+  .status-row:last-child { border-bottom: none; }
+  .label { color: #8b949e; }
+  .value { font-weight: 600; }
+  .badge-active { background: rgba(63,185,80,.15); color: #3fb950; padding: 4px 12px; border-radius: 20px; font-size: 13px; }
+
+  .btn {
+    display: block; width: 100%; text-align: center; text-decoration: none;
+    padding: 14px; border-radius: 12px; font-size: 16px; font-weight: 700;
+    transition: transform .15s, box-shadow .15s;
+  }
+  .btn:active { transform: scale(.97); }
+  .btn-import {
+    background: linear-gradient(135deg, #2f81f7, #8957e5); color: #fff;
+    box-shadow: 0 4px 20px rgba(47,129,247,.35); margin-bottom: 12px;
+  }
+  .btn-import:hover { box-shadow: 0 6px 28px rgba(137,87,229,.5); }
+  .btn-secondary { background: #21262d; color: #c9d1d9; border: 1px solid #30363d; }
+
+  .servers { display: flex; flex-direction: column; gap: 10px; }
+  .server { display: flex; align-items: center; gap: 12px; padding: 12px; background: #0d1117; border-radius: 10px; border: 1px solid #21262d; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; background: #3fb950; box-shadow: 0 0 8px #3fb950; }
+  .server .name { flex: 1; }
+  .ping { color: #8b949e; font-size: 13px; }
+
+  footer { margin-top: auto; color: #484f58; font-size: 12px; padding-top: 24px; }
+</style>
+</head>
+<body>
+
+  <div class="logo">⚡ VPN<span>Panel</span></div>
+  <div class="subtitle">Управление вашей подпиской</div>
+
+  <div class="card">
+    <h2>Статус подписки</h2>
+    <div class="status-row"><span class="label">Тариф</span><span class="value">Premium</span></div>
+    <div class="status-row"><span class="label">До конца</span><span class="value">27 дней</span></div>
+    <div class="status-row"><span class="label">Статус</span><span class="badge-active">● Активна</span></div>
+    <div class="status-row"><span class="label">Устройств</span><span class="value">3 / 5</span></div>
+  </div>
+
+  <div class="card">
+    <h2>Серверы</h2>
+    <div class="servers">
+      <div class="server"><div class="dot"></div><div class="name">🇳🇱 Нидерланды</div><div class="ping">24 мс</div></div>
+      <div class="server"><div class="dot"></div><div class="name">🇩🇪 Германия</div><div class="ping">31 мс</div></div>
+      <div class="server"><div class="dot"></div><div class="name">🇫🇮 Финляндия</div><div class="ping">38 мс</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Действия</h2>
+    <!-- Главная кнопка импорта подписки -->
+    <a class="btn btn-import" href="happ://import/raw.githubusercontent.com/ffffffis/Codavrix-forum-first-sub-/refs/heads/main/Sub/happ">
+      ⬇️ Импорт подписки в Happ
+    </a>
+    <a class="btn btn-secondary" href="#">Продлить подписку</a>
+  </div>
+
+  <footer>Макет интерфейса · v0.1</footer>
+
+</body>
+</html>
