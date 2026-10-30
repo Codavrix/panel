@@ -1,17 +1,20 @@
 :root {
-    /* Новая цветовая гамма под зеленый логотип */
-    --bg: #070e09; /* Глубокий темно-зеленый/черный фон */
-    --card-bg: rgba(18, 35, 22, 0.6); /* Темно-зеленые карточки */
+    --bg: #050a07; 
+    --card-bg: rgba(16, 32, 20, 0.65); 
     
-    --brand-green: #1db954; /* Фирменный зеленый (как на лого) */
+    --brand-green: #1db954; 
     --brand-green-hover: #1ed760;
     
-    --neon-lime: #bfff00; /* Кислотный акцент (как на старом, оставим для контраста) */
+    --neon-lime: #bfff00; 
     --neon-lime-hover: #d4ff4d;
     
+    /* Новый цвет для кнопки скачивания (Бирюзовый/Мятный) */
+    --cyan-btn: #00e5ff; 
+    --cyan-btn-hover: #5cecff;
+
     --text: #ffffff;
-    --text-muted: #95a89c; /* Слегка зеленоватый серый текст */
-    --border: rgba(29, 185, 84, 0.15); /* Зеленоватые рамки */
+    --text-muted: #95a89c; 
+    --border: rgba(29, 185, 84, 0.15); 
 }
 
 * {
@@ -31,19 +34,38 @@ body {
     flex-direction: column;
 }
 
-/* Свечения на фоне */
+/* ФОНОВЫЕ СВЕЧЕНИЯ (3 РАЗНЫХ ОТТЕНКА) */
 .bg-glow {
     position: fixed;
-    width: 300px;
-    height: 300px;
     border-radius: 50%;
-    filter: blur(100px);
+    filter: blur(120px);
     z-index: -1;
-    opacity: 0.3;
     pointer-events: none;
 }
-.glow-green { background: var(--brand-green); top: -5%; left: -10%; }
-.glow-lime { background: var(--neon-lime); bottom: -5%; right: -10%; opacity: 0.15; }
+
+/* Сверху слева - Изумрудный */
+.glow-top { 
+    width: 350px; height: 350px; 
+    background: #0b8f4d; 
+    top: -10%; left: -15%; 
+    opacity: 0.4;
+}
+
+/* Сбоку справа - Нефритовый (свежий зеленый) */
+.glow-side { 
+    width: 300px; height: 300px; 
+    background: #00b359; 
+    top: 30%; right: -20%; 
+    opacity: 0.25;
+}
+
+/* Снизу - Лаймовый */
+.glow-bottom { 
+    width: 400px; height: 400px; 
+    background: #bfff00; 
+    bottom: -15%; left: 10%; 
+    opacity: 0.15;
+}
 
 .container {
     width: 100%;
@@ -69,9 +91,8 @@ body {
     margin: 0 auto 16px;
     border-radius: 22px;
     overflow: hidden;
-    /* Тень теперь зеленая, под цвет лого */
     box-shadow: 0 10px 30px rgba(29, 185, 84, 0.25); 
-    background: var(--brand-green); /* Фолбэк фон */
+    background: var(--brand-green);
 }
 .logo { width: 100%; height: 100%; object-fit: cover; }
 
@@ -137,8 +158,8 @@ h1 {
     -webkit-backdrop-filter: blur(12px);
 }
 
-.app-card:hover { background: rgba(25, 45, 30, 0.8); border-color: rgba(29, 185, 84, 0.3); }
-.app-card:active { transform: scale(0.97); background: rgba(30, 55, 35, 0.9); }
+.app-card:hover { background: rgba(20, 40, 25, 0.8); border-color: rgba(29, 185, 84, 0.3); }
+.app-card:active { transform: scale(0.97); background: rgba(25, 50, 30, 0.9); }
 
 .app-icon {
     width: 56px;
@@ -189,15 +210,14 @@ h1 {
     font-family: inherit;
 }
 
-/* Основная кнопка (Скачать) теперь зеленоватая */
-.btn-primary { 
-    background: var(--brand-green); 
-    color: #000; /* Темный текст на зеленом лучше читается */
-    box-shadow: 0 4px 20px rgba(29, 185, 84, 0.3); 
+/* НОВАЯ КНОПКА СКАЧИВАНИЯ (Бирюзовая) */
+.btn-download { 
+    background: var(--cyan-btn); 
+    color: #000; /* Темный текст для контраста */
+    box-shadow: 0 4px 20px rgba(0, 229, 255, 0.25); 
 }
-.btn-primary:hover { background: var(--brand-green-hover); }
+.btn-download:hover { background: var(--cyan-btn-hover); }
 
-/* Кнопка импорта осталась лаймовой для яркого акцента */
 .btn-accent { 
     background: var(--neon-lime); 
     color: #000; 
@@ -329,4 +349,4 @@ footer {
     h1 { font-size: 24px; }
     .content-box { padding: 20px 12px; }
     .description { font-size: 13px; }
-    }
+}
