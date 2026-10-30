@@ -1,13 +1,17 @@
 :root {
-    --bg: #090514;
-    --card-bg: rgba(25, 15, 40, 0.65);
-    --pink: #ff2e88;
-    --pink-hover: #ff5ca0;
-    --green: #bfff00;
-    --green-hover: #d4ff4d;
+    /* Новая цветовая гамма под зеленый логотип */
+    --bg: #070e09; /* Глубокий темно-зеленый/черный фон */
+    --card-bg: rgba(18, 35, 22, 0.6); /* Темно-зеленые карточки */
+    
+    --brand-green: #1db954; /* Фирменный зеленый (как на лого) */
+    --brand-green-hover: #1ed760;
+    
+    --neon-lime: #bfff00; /* Кислотный акцент (как на старом, оставим для контраста) */
+    --neon-lime-hover: #d4ff4d;
+    
     --text: #ffffff;
-    --text-muted: #a09ab0;
-    --border: rgba(255, 255, 255, 0.08);
+    --text-muted: #95a89c; /* Слегка зеленоватый серый текст */
+    --border: rgba(29, 185, 84, 0.15); /* Зеленоватые рамки */
 }
 
 * {
@@ -27,6 +31,7 @@ body {
     flex-direction: column;
 }
 
+/* Свечения на фоне */
 .bg-glow {
     position: fixed;
     width: 300px;
@@ -34,11 +39,11 @@ body {
     border-radius: 50%;
     filter: blur(100px);
     z-index: -1;
-    opacity: 0.35;
+    opacity: 0.3;
     pointer-events: none;
 }
-.glow-pink { background: var(--pink); top: -5%; left: -10%; }
-.glow-green { background: var(--green); bottom: -5%; right: -10%; }
+.glow-green { background: var(--brand-green); top: -5%; left: -10%; }
+.glow-lime { background: var(--neon-lime); bottom: -5%; right: -10%; opacity: 0.15; }
 
 .container {
     width: 100%;
@@ -64,8 +69,9 @@ body {
     margin: 0 auto 16px;
     border-radius: 22px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(255, 46, 136, 0.25);
-    background: linear-gradient(135deg, var(--pink), #7b2cbf);
+    /* Тень теперь зеленая, под цвет лого */
+    box-shadow: 0 10px 30px rgba(29, 185, 84, 0.25); 
+    background: var(--brand-green); /* Фолбэк фон */
 }
 .logo { width: 100%; height: 100%; object-fit: cover; }
 
@@ -73,9 +79,9 @@ body {
     width: 100%; height: 100%;
     align-items: center; justify-content: center;
     font-size: 40px; font-weight: 800;
+    background: #0a1a10; color: var(--brand-green);
 }
 
-/* Заголовок без цветка */
 h1 { 
     font-size: 28px; 
     font-weight: 800; 
@@ -83,7 +89,6 @@ h1 {
     margin-bottom: 8px;
 }
 
-/* Обновленное описание */
 .description {
     color: var(--text-muted);
     font-size: 14px;
@@ -132,8 +137,8 @@ h1 {
     -webkit-backdrop-filter: blur(12px);
 }
 
-.app-card:hover { background: rgba(35, 20, 55, 0.85); border-color: rgba(255,255,255,0.15); }
-.app-card:active { transform: scale(0.97); background: rgba(45, 25, 65, 0.9); }
+.app-card:hover { background: rgba(25, 45, 30, 0.8); border-color: rgba(29, 185, 84, 0.3); }
+.app-card:active { transform: scale(0.97); background: rgba(30, 55, 35, 0.9); }
 
 .app-icon {
     width: 56px;
@@ -162,7 +167,7 @@ h1 {
 }
 
 .happ-fallback { background: linear-gradient(135deg, #fff, #dcdcdc); color: #000; }
-.incy-fallback { background: linear-gradient(135deg, var(--green), #8ab000); color: #000; }
+.incy-fallback { background: linear-gradient(135deg, var(--brand-green), #0f7a33); color: #fff; }
 
 .app-card h3 { font-size: 18px; margin-bottom: 2px; }
 .app-card p { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; text-align: center;}
@@ -184,23 +189,34 @@ h1 {
     font-family: inherit;
 }
 
-.btn-primary { background: var(--pink); color: #fff; box-shadow: 0 4px 20px rgba(255, 46, 136, 0.3); }
-.btn-primary:hover { background: var(--pink-hover); }
+/* Основная кнопка (Скачать) теперь зеленоватая */
+.btn-primary { 
+    background: var(--brand-green); 
+    color: #000; /* Темный текст на зеленом лучше читается */
+    box-shadow: 0 4px 20px rgba(29, 185, 84, 0.3); 
+}
+.btn-primary:hover { background: var(--brand-green-hover); }
 
-.btn-accent { background: var(--green); color: #000; box-shadow: 0 4px 20px rgba(191, 255, 0, 0.25); }
-.btn-accent:hover { background: var(--green-hover); }
+/* Кнопка импорта осталась лаймовой для яркого акцента */
+.btn-accent { 
+    background: var(--neon-lime); 
+    color: #000; 
+    box-shadow: 0 4px 20px rgba(191, 255, 0, 0.2); 
+}
+.btn-accent:hover { background: var(--neon-lime-hover); }
 
-.btn-secondary { background: rgba(255,255,255,0.08); color: #fff; border: 1px solid var(--border); }
-.btn-secondary:hover { background: rgba(255,255,255,0.12); }
+.btn-secondary { background: rgba(255,255,255,0.06); color: #fff; border: 1px solid var(--border); }
+.btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: rgba(29, 185, 84, 0.3); }
 
 .btn-outline {
     background: transparent;
-    border: 1px solid rgba(255,255,255,0.15);
-    color: #fff;
+    border: 1px solid rgba(29, 185, 84, 0.3);
+    color: var(--brand-green);
     width: auto;
     padding: 8px 24px;
     font-size: 13px;
     pointer-events: none;
+    font-weight: 700;
 }
 
 .mt-20 { margin-top: 16px; }
@@ -222,7 +238,7 @@ h1 {
 
 /* Кнопка НАЗАД */
 .back-btn {
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.04);
     border: 1px solid var(--border);
     border-radius: 10px;
     color: var(--text-muted); 
@@ -258,8 +274,8 @@ h1 {
 
 .back-btn:hover { 
     color: #fff; 
-    background: rgba(255,255,255,0.1);
-    border-color: rgba(255,255,255,0.2);
+    background: rgba(29, 185, 84, 0.1);
+    border-color: rgba(29, 185, 84, 0.3);
 }
 
 /* Копирование */
@@ -285,12 +301,12 @@ h1 {
     min-width: 0;
 }
 .copy-box button {
-    background: rgba(255,255,255,0.1); border: none;
-    color: #fff; padding: 0 14px; cursor: pointer;
-    font-family: inherit; font-size: 12px; font-weight: 600;
+    background: rgba(29, 185, 84, 0.15); border: none;
+    color: var(--brand-green); padding: 0 14px; cursor: pointer;
+    font-family: inherit; font-size: 12px; font-weight: 700;
     transition: background 0.2s; white-space: nowrap;
 }
-.copy-box button:hover { background: rgba(255,255,255,0.2); }
+.copy-box button:hover { background: rgba(29, 185, 84, 0.25); }
 
 /* Футер */
 footer {
@@ -303,10 +319,10 @@ footer {
     color: var(--text-muted); text-decoration: none;
     font-size: 13px; font-weight: 600; transition: color 0.2s;
     padding: 8px 16px; border-radius: 12px;
-    background: rgba(255,255,255,0.03);
+    background: rgba(255,255,255,0.02);
     border: 1px solid transparent;
 }
-.tg-link:hover { color: var(--green); border-color: rgba(191,255,0,0.2); background: rgba(191,255,0,0.05); }
+.tg-link:hover { color: var(--brand-green); border-color: rgba(29, 185, 84, 0.2); background: rgba(29, 185, 84, 0.05); }
 
 @media (max-width: 360px) {
     .container { padding: 24px 12px; }
